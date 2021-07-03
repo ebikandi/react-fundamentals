@@ -4,9 +4,9 @@
 import * as React from 'react'
 import '../box-styles.css'
 
-function Box({size, style, children}) {
+function Box({size, style = {}, children}) {
   const enhancedStyle = {...style, fontStyle: 'italic'}
-  const enhancedClassNAme = `box box--${size}`
+  const enhancedClassNAme = `box ${size ? 'box--' + size : ''}`
   return (
     <div className={enhancedClassNAme} style={enhancedStyle}>
       {children}
